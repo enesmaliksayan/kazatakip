@@ -5,3 +5,9 @@ var guncelle = (id) => {
 
     $.get(url,(data) => { alert("ok"); });
 }
+
+var detay = (id) => {
+    let url = 'http://localhost:3321/namaz/'+id;
+
+    $.get(url,(data) => { alert("ok"); });
+}
