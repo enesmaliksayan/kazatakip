@@ -3,7 +3,13 @@ var guncelle = (id) => {
     let kalan = $(idString).val();
     let url = 'http://localhost:3321/kildim/'+id+'/'+kalan;
 
-    $.get(url,(data) => { alert("ok"); });
+    $.get(url,(data) => { 
+        if(data['ok']){
+            alert("ok");
+        } else {
+            alert("HATA:\n"+data['err']);
+        }
+     });
 }
 
 var detay = (id) => {

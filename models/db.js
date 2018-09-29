@@ -14,7 +14,7 @@ const NamazSchema = mongoose.Schema({
 const Namaz = module.exports = mongoose.model('Namaz', NamazSchema);
 
 module.exports.updateNamazById = (id, body, callback) => {
-    Namaz.findOneAndUpdate(id, body, callback);
+    Namaz.findOneAndUpdate({_id:id}, body, callback);
 }
 
 module.exports.getNamazlar = (callback) => {

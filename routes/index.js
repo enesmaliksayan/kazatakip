@@ -11,8 +11,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/kildim/:id/:kalan', (req,res,next) => {
-  DB.updateNamazById(req.params.id,{kalan:req.params.kalan}, (err, namaz) => {
-    if(!err) res.redirect('/');
+  DB.updateNamazById(req.params.id,{'kalan':req.params.kalan}, (err, namaz) => {
+    if(err) {
+      res.json({ok:false,err});
+    }
+    else {
+      res.json({ok:true,namaz});
+    }
   })
 });
 
